@@ -53,16 +53,19 @@ function playRound(humanSelection, computerSelection) {
     } else {
         computerScore++
         console.log("Computer wins!")
-    }
+    } console.log("The score of the human is: " + humanScore.toString() + " and the score of the computer is: " + computerScore.toString());
 
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    
+}
 
-playRound(humanSelection, computerSelection);
-
-console.log(humanScore)
-console.log(computerScore)
+playGame()
 
 
