@@ -1,3 +1,5 @@
+// the code below generates a random computer choice in the game. 
+
 function getRandomInt(min, max) {
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
@@ -9,13 +11,21 @@ function getRandomInt(min, max) {
 function getComputerChoice() {
      let outcome = getRandomInt(1,4);
      if (outcome === 1) {
-        console.log("The computer has Rock")
+        return "rock";
+        return outcome;
      } else if (outcome === 2) {
-        console.log("The computer has Paper")
+        return "paper";
      } else {
-        console.log("The computer has Scissors")
+        return "scissors";
      }
 }
 
-getComputerChoice()
+console.log(getComputerChoice())
+
+// the code below 
+
+
+
+
+
 
