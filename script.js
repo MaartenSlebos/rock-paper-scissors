@@ -22,10 +22,21 @@ function getComputerChoice() {
 
 console.log(getComputerChoice())
 
-// the code below 
+// first, I need to get human input. 
+// then I need to parse that into lowercase letters
 
 
+function getHumanChoice() {
+    let choice = prompt("Choose: 'rock', 'paper' or 'scissors'");
+    choice = choice.toLowerCase();
+    return choice;
+}
 
+console.log(getHumanChoice())
+
+let humanScore = 0;
+
+let computerScore = 0;
 
 
 
