@@ -20,8 +20,6 @@ function getComputerChoice() {
      }
 }
 
-console.log(getComputerChoice())
-
 // first, I need to get human input. 
 // then I need to parse that into lowercase letters
 
@@ -32,11 +30,39 @@ function getHumanChoice() {
     return choice;
 }
 
-console.log(getHumanChoice())
-
 let humanScore = 0;
 
 let computerScore = 0;
 
+// Rock beats scissors, scissors beats paper, and paper beats rock 
+
+function playRound(humanSelection, computerSelection) {
+    console.log("Human chose "+humanSelection+" and computer chose "+computerSelection)
+    if (humanSelection === computerSelection) {
+
+        console.log("It's a draw.")
+    } else if (humanSelection === "rock" && computerSelection === "scissors") {
+        humanScore++
+        console.log("Human wins!")
+    } else if (humanSelection === "scissors" && computerSelection === "paper") {
+        humanScore++
+        console.log("Human wins!")
+    } else if (humanSelection === "paper" && computerSelection === "rock") {
+        humanScore++
+        console.log("Human wins!")
+    } else {
+        computerScore++
+        console.log("Computer wins!")
+    }
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+console.log(humanScore)
+console.log(computerScore)
 
 
