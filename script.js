@@ -12,7 +12,26 @@ function getComputerChoice() {
     } else {
         computerChoice = "scissors"
     }
-
-    return computerChoice
+    return computerChoice;
 }
+
+// create a function that takes a string as user input
+// return the user input
+
+function getHumanChoice() {
+    let humanChoice = prompt("rock, paper, or scissors?");
+    return humanChoice.toLowerCase();
+}
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
 
