@@ -2,6 +2,9 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
+    const roundResult = document.getElementById("round-result");
+    const scoreDisplay = document.getElementById("score");
+
     function getComputerChoice() {
         const choices = ["rock", "paper", "scissors"];
         return choices[Math.floor(Math.random() * 3)];
@@ -9,25 +12,29 @@ function playGame() {
 
     function playRound(playerSelection) {
         const computerSelection = getComputerChoice();
-        console.log(`Human: ${playerSelection} | Computer: ${computerSelection}`);
+        let resultMessage;
+
         if (
             (playerSelection === "rock" && computerSelection === "scissors") ||
             (playerSelection === "paper" && computerSelection === "rock") ||
             (playerSelection === "scissors" && computerSelection === "paper")
         ) {
-            console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+            resultMessage = `You win! ${playerSelection} beats ${computerSelection}`;
             humanScore++;
         } else if (
             (playerSelection === "rock" && computerSelection === "paper") ||
             (playerSelection === "paper" && computerSelection === "scissors") ||
             (playerSelection === "scissors" && computerSelection === "rock")
         ) {
-            console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+            resultMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
             computerScore++;
         } else {
-            console.log("It's a draw!");
+            resultMessage = "It's a draw!";
         }
-        console.log(`Score - Human: ${humanScore} | Computer: ${computerScore}`);
+
+        // Update the DOM with results
+        roundResult.textContent = resultMessage;
+        scoreDisplay.textContent = `Score - Human: ${humanScore} | Computer: ${computerScore}`;
     }
 
     // Add event listeners for the buttons
