@@ -48,11 +48,6 @@ function playGame() {
         }
         console.log(`Current Score - Human: ${humanScore} | Computer: ${computerScore}`);
     }
-    playRound();
-    playRound();
-    playRound();
-    playRound();
-    playRound();
 }
 
 playGame()
